@@ -95,6 +95,7 @@ function btnGuardar(){   //funcion guardar y crear lista
      divDos.ondragover=permitir;
      divElemento.ondragstart=arrastrar;
      divDos.ondrop=soltar;
+     divElemento.ondragend=final;
      //termina sección Drag and drop
 
 
@@ -113,10 +114,14 @@ function btnGuardar(){   //funcion guardar y crear lista
   }
 
   function arrastrar(ev) {
-    
+    this.style.backgroundColor="#2F4F4F";
     ev.dataTransfer.setData("text", ev.target.id);
     this.classList.add("transicion");
     
+  }
+
+  function final(ev){
+    this.style.backgroundColor="#F0F8FF";
   }
 
   
